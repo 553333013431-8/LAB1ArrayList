@@ -1,5 +1,7 @@
 package arr;
 
+import java.util.Arrays;
+
 public class ArrayListe {
 
 	private Object edata[] = new Object[1];
@@ -48,26 +50,33 @@ public class ArrayListe {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayListe num = new ArrayListe();
-		num.add("a");
-		num.add("b");
-		num.add("c");
-		num.add("d");
-		num.add("e");
-		num.add("f");
-		num.add("g");
+		num.add("A");
+		num.add("B");
+		num.add("C");
+		num.add("D");
+		num.add("E");
+		num.add("F");
+		num.add("G");
 		System.out.println(num);
 
 	}
 
+	@Override
 	public String toString() {
-		String sum = "[";
-		for (int i = 0; i < size; i++) {
-			if (i == size - 1) {
-				sum = sum + edata[i] + "]";
-			} else {
-				sum = sum + edata[i] + ",";
-			}
+		Object arr[] = new Object[size];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = edata[i];
 		}
-		return sum;
+		return Arrays.toString(arr);
+	}
+
+	public int size() {
+
+		return size;
+	}
+
+	public Object get(int i) {
+		Object get = edata[i];
+		return get;
 	}
 }
